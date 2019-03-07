@@ -10,30 +10,55 @@ $_SESSION['txtTotal'] = $totalValue;
 <html lang="en" xmlns="http.//www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>Ebusiness 1</title>
+    <title>eBusiness 1</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
-<body>
+
+<header>
+        <style>
+            h1 {
+                color: #000000;
+                font-size: 70px;
+            }
+            
+            .button {
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+        </style>
+    </header>
+
+<body bgcolor="#ffd8d8">
     <div class="form">
+        <center>
             <form name="intCalc" method="post" action="eBus2.php">
-        <h1>Shop Calculator</h1>
-        <hr />
+        <h1>Consulting Services</h1>
+        <hr>
+        </center>
         <center>
                     <table cellspacing="10">
             <tr>
-                            <td><b>Beverage</b></td>
+                            <td><b>Package</b></td>
             </tr>
             <tr>
-                            <td>CocaCola</td>
-                            <td><input type="radio" id="CocaCola" name="rdoGroup" value="1" /></td>
+                            <td>Blockchain</td>
+                            <td><input type="radio" id="Blockchain" name="rdoGroup" value="1000" /></td>
                         </tr>               
             <tr>
-                            <td>Sprite</td>
-                            <td><input type="radio" id="Sprite" name="rdoGroup" value="5" /></td>
+                            <td>Autonomous Things</td>
+                            <td><input type="radio" id="AutonomousThings" name="rdoGroup" value="2000" /></td>
                         </tr>               
             <tr>
-                            <td>Fanta</td>
-                            <td><input type="radio" id="Fanta" name="rdoGroup" value="30" /></td>
+                            <td>Immersive Experiences</td>
+                            <td><input type="radio" id="ImmersiveExperiences" name="rdoGroup" value="3000" /></td>
                         </tr>   
                     </table>
                 </center>
@@ -46,20 +71,20 @@ $_SESSION['txtTotal'] = $totalValue;
                     <td><b>Amount</b></td>
         </tr>
         <tr>
-                    <td>Sub Total</td>
-                    <td><input type="text" id="txtSubTot" name="txtSub" readonly /></td>
+                    <td>Subtotal</td>
+                    <td><input type="text" id="txtSubTot" name="txtSub" onkeydown="return false;" required="true"/></td>
         </tr>
         <tr>
-                    <td>-Discount @30%</td>
-                    <td><input type="text" id="txtDisc" name="txtDisc" readonly /></td>
+                    <td>-Discount @10%</td>
+                    <td><input type="text" id="txtDisc" name="txtDisc" onkeydown="return false;" required="true"/></td>
         </tr>
                 <tr>
-                    <td>+VAT @40%</td>
-                    <td><input type="text" id="txtVat" name="txtVat" readonly /></td>
+                    <td>+VAT @20%</td>
+                    <td><input type="text" id="txtVat" name="txtVat" onkeydown="return false;" required="true"/></td>
         </tr>
                 <tr>
                     <td>Total</td>
-                    <td><input type="text" id="txtTotal" name="txtTotal" value="" readonly /></td>
+                    <td><input type="text" id="txtTotal" name="txtTotal" value="" onkeydown="return false;" required="true"/></td>
                 </tr>
             </table>
         </center>
@@ -70,6 +95,15 @@ $_SESSION['txtTotal'] = $totalValue;
                     <input type="button" name="btnClear" id="btnClear" onclick="AmountClear()" value="Clear"/>
                     <input type="submit" name="btnProceed" id="btnProceed" onclick="" value="Proceed"/>
         </center>
+    
+        <div>
+            <center>
+            <br><br><br>
+            <a href="index.php" class="button">Menu</a>
+            <a href="interests.html" class="button">Interests</a>
+            <br><br><br>
+            </center>
+        </div>
     </form>
 </div>
        
@@ -77,26 +111,26 @@ $_SESSION['txtTotal'] = $totalValue;
         function calcSub() {
             //Assigning variables to the values
             var subAmount = parseFloat(document.getElementById('txtSubTot').value);
-            var CocaCola = parseFloat(document.getElementById('CocaCola').value);
-            var Sprite = parseFloat(document.getElementById('Sprite').value);
-            var Fanta = parseFloat(document.getElementById('Fanta').value);
+            var Blockchain = parseFloat(document.getElementById('Blockchain').value);
+            var AutonomousThings = parseFloat(document.getElementById('AutonomousThings').value);
+            var ImmersiveExperiences = parseFloat(document.getElementById('ImmersiveExperiences').value);
            
 //            If radio buttons are clicked, values are assigned
-            if (document.getElementById('CocaCola').checked) {
-                document.intCalc.txtSubTot.value = CocaCola;
-                subAmount = CocaCola;
+            if (document.getElementById('Blockchain').checked) {
+                document.intCalc.txtSubTot.value = Blockchain;
+                subAmount = Blockchain;
                 calculation(subAmount);
                
             }
-        else if (document.getElementById('Sprite').checked) {
-                document.intCalc.txtSubTot.value = Sprite;
-                subAmount = Sprite;
+        else if (document.getElementById('AutonomousThings').checked) {
+                document.intCalc.txtSubTot.value = AutonomousThings;
+                subAmount = AutonomousThings;
                  calculation(subAmount);
               
             }
-        else if (document.getElementById('Fanta').checked) {
-                document.intCalc.txtSubTot.value = Fanta;
-                subAmount = Fanta;
+        else if (document.getElementById('ImmersiveExperiences').checked) {
+                document.intCalc.txtSubTot.value = ImmersiveExperiences;
+                subAmount = ImmersiveExperiences;
                  calculation(subAmount);
             }
         }   
@@ -104,8 +138,8 @@ $_SESSION['txtTotal'] = $totalValue;
          //Function for calculating the values
         function calculation(parmSTotal){
            var subTotal = parseFloat(parmSTotal);
-           var discCalc = parseFloat(subTotal * .30);
-           var vatCalc = parseFloat(subTotal * .40);
+           var discCalc = parseFloat(subTotal * .10);
+           var vatCalc = parseFloat((subTotal - discCalc) * .20);
            var total = parseFloat(subTotal - discCalc + vatCalc);
           
            //Inserting them into the correct fields
