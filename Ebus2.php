@@ -47,7 +47,7 @@ $_Session['txtEmail'] = $emailValue;
     
     <body bgcolor="#ffd8d8">
         <div class="form">
-            <form name="Details" method="post" action="eBus3.php">
+            <form name="Details" method="post" action="Ebus3.php">
                 <center>
                 <h1>Personal Details</h1>
                 </center>

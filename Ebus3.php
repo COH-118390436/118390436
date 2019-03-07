@@ -45,7 +45,7 @@ echo "Total Amount: ".$totalValue2.".";
     <div>
         <br><br><br>
         <a href="index.php" class="button">Menu</a>
-        <a href="interests.html" class="button">Interests</a>
+        <a href="Interests.html" class="button">Interests</a>
         <br><br><br>
     </div>
     </center>

@@ -39,7 +39,7 @@ $_SESSION['txtTotal'] = $totalValue;
 <body bgcolor="#ffd8d8">
     <div class="form">
         <center>
-            <form name="intCalc" method="post" action="eBus2.php">
+            <form name="intCalc" method="post" action="Ebus2.php">
         <h1>Consulting Services</h1>
         <hr>
         </center>
@@ -100,7 +100,7 @@ $_SESSION['txtTotal'] = $totalValue;
             <center>
             <br><br><br>
             <a href="index.php" class="button">Menu</a>
-            <a href="interests.html" class="button">Interests</a>
+            <a href="Interests.html" class="button">Interests</a>
             <br><br><br>
             </center>
         </div>
